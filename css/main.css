@@ -241,6 +241,14 @@ body.dark-mode footer {
   font-size: 18px;
 }
 
+.subject:hover,
+.subject21:hover,
+.subject22:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
 /* #m555 {
   border-radius: 2px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
