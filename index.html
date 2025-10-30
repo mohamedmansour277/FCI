@@ -571,11 +571,15 @@
     }
   </style>
   <style>
+    .fereqa-card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: #ccc solid 2px;
+    }
+
     .fereqa-card {
-      position: fixed;
-      top: 200px;
-      left: 50%;
-      transform: translateX(-50%);
       width: 220px;
       background: #fff;
       border-radius: 12px;
@@ -583,6 +587,7 @@
       overflow: hidden;
       z-index: 100;
     }
+
 
     .fereqa-card-header {
       display: flex;
@@ -959,7 +964,7 @@
             <h4>نسخة تجريبية من الموقع يا باشا 6</h4>
             <h2 class="webLink">[ تحديث ]</h2>
             <h4>نسخة تجريبية من الموقع يا باشا 5</h4>
-            <h2 class="webLink">[  محمد تحديث ]</h2>
+            <h2 class="webLink">[ محمد تحديث ]</h2>
             <h4>نسخة تجريبية من الموقع يا باشا 5</h4>
             <h2 class="webLink">[ تحديث ]</h2>
             <h4>نسخة تجريبية من الموقع يا باشا 4</h4>
@@ -973,16 +978,18 @@
         </div>
       </div>
     </div>
-    <div class="fereqa-card" id="fereqaCard">
-      <div class="fereqa-card-header" id="cardHeaderrr">
-        <span id="selectedFereqa"> اختر الفرقة</span>
-        <span class=" circle blueSelect"></span>
-      </div>
-      <div class="fereqa-options" id="feqeraOption">
-        <a href="le1.html" class="fereqa-option">الفرقة الأولى</a>
-        <a href="le2.html" class="fereqa-option">الفرقة الثانية</a>
-        <a href="le3.html" class="fereqa-option">الفرقة الثالثة</a>
-        <a href="le4.html" class="fereqa-option">الفرقة الرابعة</a>
+    <div class="fereqa-card-container">
+      <div class="fereqa-card" id="fereqaCard">
+        <div class="fereqa-card-header" id="cardHeaderrr">
+          <span id="selectedFereqa"> اختر الفرقة</span>
+          <span class=" circle blueSelect"></span>
+        </div>
+        <div class="fereqa-options" id="feqeraOption">
+          <a href="le1.html" class="fereqa-option">الفرقة الأولى</a>
+          <a href="le2.html" class="fereqa-option">الفرقة الثانية</a>
+          <a href="le3.html" class="fereqa-option">الفرقة الثالثة</a>
+          <a href="le4.html" class="fereqa-option">الفرقة الرابعة</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1498,7 +1505,7 @@
         cardQue.classList.add("openQue");
       }
     }
-    
+
     // اختيار الترم وحفظه
     document.addEventListener('DOMContentLoaded', () => {
       const cardQue = document.getElementById('termCardQue');
