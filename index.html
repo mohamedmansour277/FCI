@@ -11,9 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    html, body {
+    html,
+    body {
       overscroll-behavior: contain;
     }
+
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
     * {
@@ -574,7 +576,7 @@
     }
   </style>
   <style>
-    .fereqa-card-container{
+    .fereqa-card-container {
       position: relative;
       display: flex;
       justify-content: center;
@@ -1555,6 +1557,21 @@
         if (targetQue) targetQue.classList.add('activeQue');
       }
     });
+  </script>
+  <script>
+    let startY = 0;
+
+    window.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    }, { passive: false });
+
+    window.addEventListener('touchmove', e => {
+      const currentY = e.touches[0].clientY;
+      // لما تكون في أول الصفحة وبتسحب لتحت
+      if (window.scrollY === 0 && currentY > startY) {
+        e.preventDefault(); // يمنع الـ refresh
+      }
+    }, { passive: false });
   </script>
 </body>
 
