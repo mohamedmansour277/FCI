@@ -2015,21 +2015,6 @@
       }
     });
   </script>
-  <script>
-    let startY = 0;
-
-    window.addEventListener('touchstart', e => {
-      startY = e.touches[0].clientY;
-    }, { passive: false });
-
-    window.addEventListener('touchmove', e => {
-      const currentY = e.touches[0].clientY;
-      // لما تكون في أول الصفحة وبتسحب لتحت
-      if (window.scrollY === 0 && currentY > startY) {
-        e.preventDefault(); // يمنع الـ refresh
-      }
-    }, { passive: false });
-  </script>
 </body>
 
 </html>
