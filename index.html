@@ -5,970 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FCI</title>
-  <meta name="theme-color" content="rgb(37, 191, 237)" />
+  <link rel="stylesheet" href="who-is-us.css">
   <link rel="icon" type="img" href="imgs/icon1.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    html,
-    body {
-      overscroll-behavior: contain;
-    }
-
-    /* ===== Scrollbar CSS ===== */
-    /* Firefox */
-    * {
-      scrollbar-width: none;
-      scrollbar-color: #25bfed #ffffff;
-    }
-
-    /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-      width: 2px;
-    }
-
-    *::-webkit-scrollbar-track {
-      background: #ffffff;
-    }
-
-    *::-webkit-scrollbar-thumb {
-      background-color: #25bfed;
-      border-radius: 10px;
-      border: 3px none #ffffff;
-    }
-
-    .card {
-      position: absolute;
-      top: 20px;
-      /* المسافة من فوق */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 220px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      z-index: 10;
-    }
-
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    .arrow {
-      transition: transform .25s ease;
-    }
-
-    .card.open .arrow {
-      transform: rotate(180deg);
-    }
-
-    .options {
-
-      max-height: 0;
-      /* float: center; */
-      overflow: hidden;
-      transition: max-height .30s cubic-bezier(.2, .9, .2, 1), padding .25s;
-      border-top: 1px solid #eee;
-      padding: 0;
-    }
-
-    .card.open .options {
-      padding: 8px 0;
-    }
-
-    .option {
-      padding: 10px 14px;
-      cursor: pointer;
-      background: #fff;
-      transition: background .15s;
-      text-align: center;
-    }
-
-    .option:hover {
-      background: #f1f5ff;
-    }
-
-    .separator {
-      height: 1px;
-      width: 60%;
-      background: #e0e0e0;
-      margin: 8px auto;
-      border-radius: 2px;
-    }
-
-    #selectedTerm {
-      color: rgb(37, 191, 237);
-      font-weight: 700;
-      margin-right: 6px;
-    }
-
-    .content {
-      width: min(900px, 92%);
-      margin: 0 auto;
-      /* تم التعديل: إزالة الهامش الرأسي من العنصر المخفي */
-      /* background: #fff; */
-      border-radius: 12px;
-      padding: 14px;
-      /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); */
-      opacity: 0;
-      transform: translateY(6px);
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity .2s ease, transform .2s ease, max-height .0s ease;
-    }
-
-    .content.active {
-      opacity: 1;
-      transform: none;
-      max-height: 1200px;
-      margin: 100px auto;
-      /* تم الإضافة: تطبيق الهامش فقط عند تفعيل المحتوى */
-    }
-
-    @media (max-width:420px) {
-      .card {
-        width: 200px;
-      }
-
-      .content {
-        padding: 12px;
-      }
-    }
-
-    .Cardd {
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
-      overflow: hidden;
-    }
-
-    .Cardd-headerOfCard {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      cursor: pointer;
-    }
-
-    .Cardd-headerOfCard h3 {
-      /* font-family: cursive; */
-      font-weight: 900;
-      margin: 0;
-      font-size: 18px;
-      color: #1C2E4a;
-    }
-
-    .arrow {
-      transition: transform .3s ease;
-      font-size: 18px;
-      color: #1C2E4a;
-    }
-
-    .Cardd-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease;
-      padding: 0 20px;
-      color: #444;
-      font-size: 14px;
-    }
-
-    .Cardd.open .arrow {
-      transform: rotate(180deg);
-
-    }
-
-    /* === شكل العنصر الداخلي === */
-    .Cardd-content .item {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-    }
-
-    .circle {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-top: 0px;
-      margin-left: 10px;
-      /* background: #2b8cff; */
-      /* box-shadow: 0px 0px 0px 4px hsla(213, 100%, 58%, 0.3); */
-      flex-shrink: 0;
-    }
-
-    .blueSelect {
-      background: rgb(37, 191, 237);
-      box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-      animation: mansblue infinite 3s;
-    }
-
-    .blueSelect2 {
-      /* clip-path: circle(10px); */
-      width: 20px;
-      height: 20px;
-      /* padding: 5px; */
-      background: rgb(37, 191, 237);
-      box-shadow: 0px 0px 0px 6px rgba(37, 190, 237, 0.4);
-      animation: masblue infinite 3s;
-    }
-
-    .blue {
-      background: rgb(37, 191, 237);
-      box-shadow: 0px 0px 0px 3px rgba(37, 190, 237, 0.4);
-      /* animation: mansblue infinite 3s; */
-    }
-
-    .red {
-      background: #ff4d4f;
-      box-shadow: 0px 0px 0px 3px hsl(359, 100%, 65%, 0.4);
-      /* animation: mansRed infinite 3s; */
-    }
-
-    .orange {
-      background: #ffa940;
-      box-shadow: 0px 0px 0px 3px hsla(33, 100%, 63%, 0.4);
-    }
-
-    .item h4 {
-      font-weight: 700;
-      font-size: 15px;
-      margin: 0;
-      margin-bottom: 5px;
-    }
-
-    .blueH4 {
-      color: rgb(37, 191, 237);
-      margin: auto;
-    }
-
-    .redH4 {
-      color: hsl(359, 100%, 65%);
-    }
-
-    .orangeH4 {
-      color: hsl(33, 100%, 63%);
-    }
-
-    @keyframes mansblue {
-      0% {
-        box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-      }
-
-      50% {
-        box-shadow: 0px 0px 0px 6px rgba(37, 190, 237, 0.4);
-      }
-
-      100% {
-        box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-      }
-    }
-
-    @keyframes mansBlue {
-      0% {
-        box-shadow: 0px 0px 0px 4px hsl(359, 100%, 65%, 0.4);
-      }
-
-      50% {
-        box-shadow: 0px 0px 0px 6px hsl(359, 100%, 65%, 0.4);
-      }
-
-      100% {
-        box-shadow: 0px 0px 0px 4px hsl(359, 100%, 65%, 0.4);
-      }
-    }
-
-    .vidLink {
-      font-size: 11px;
-      padding: 0px 10px;
-      margin-right: 4px;
-      background: #ff4d4f;
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      border: #ff4d4f solid 2px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 0px 4px hsl(359, 100%, 65%, 0.4);
-      transition: all .3s ease;
-    }
-
-    .webLink {
-      font-size: 11px;
-      padding: 0px 10px;
-      margin-right: 4px;
-      background: rgb(37, 191, 237);
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      border: rgb(37, 191, 237) solid 2px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-      transition: all .3s ease;
-    }
-
-    .bookLink {
-      font-size: 11px;
-      padding: 0px 10px;
-      margin-right: 4px;
-      background: #ffa940;
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      border: #ffa940 solid 2px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 0px 4px hsla(33, 100%, 63%, 0.4);
-      transition: all .3s ease;
-    }
-
-    .webLink:hover,
-    .vidLink:hover,
-    .bookLink:hover {
-      background: none;
-    }
-
-    .webLink:hover {
-      color: rgb(37, 191, 237);
-    }
-
-    .bookLink:hover {
-      color: #ffa940;
-    }
-
-    .vidLink:hover {
-      color: #ff4d4f;
-    }
-
-    #term2 {
-      margin-top: 75px !important;
-    }
-  </style>
-  <style>
-    body {
-      background: #ffffff;
-      margin: 0;
-      padding: 0;
-      font-family: 'Tajawal', sans-serif;
-      direction: rtl;
-    }
-
-    button {
-      width: 50px;
-      background: none;
-      border: none;
-    }
-
-    .container {
-      backdrop-filter: blur(5px);
-      font-family: 'Tajawal', sans-serif;
-      width: 100%;
-      /* max-width: 800px; */
-      height: 70px;
-      background: hsl(0, 0%, 100%);
-      box-shadow: 0px 0px 6px 0px #727272aa;
-      /* border-radius: 30px; */
-      /* border: #ffffff solid 1px; */
-      display: flex;
-      justify-content: space-evenly;
-      align-content: center;
-      gap: 10px;
-      transition: all .3s ease;
-      z-index: 10;
-      padding: 5px;
-    }
-
-    .sim1 {
-
-      /* margin: 0px 20px; */
-      border-radius: 10px;
-      display: inline;
-      width: 70px;
-      margin: 5px 0px;
-      padding: 2px;
-      height: fit-content;
-      /* backdrop-filter: blur(7px); */
-      /* border: solid 2px red; */
-      /* margin-top: 10px; */
-      /* margin-right: 10px; */
-      text-align: center;
-      align-content: center;
-    }
-
-
-    /* .activeSim {
-      background-color: #52677d15;
-      border-radius: 20px;
-      border: #0f596a35 solid 2px;
-      scale: 1.15;
-    } */
-
-    .activeSim p {
-      color: rgb(37, 191, 237) !important;
-    }
-
-    .sim1 img {
-      margin-top: 2px;
-      width: 25px;
-      /* height: 30px; */
-      /* scale: 1.3; */
-      border-radius: 10px;
-      transition: all .5s ease;
-    }
-
-    .center {
-      width: 100%;
-      /* background-color: aqua; */
-      position: fixed;
-      bottom: 0px;
-      display: flex;
-      justify-content: center;
-      /* align-items: center; */
-      z-index: 1000;
-    }
-
-    .sim1 p {
-      color: #63778c;
-      font-weight: 700;
-      font-size: 11px;
-      transition: all .5s ease;
-      /* margin-bottom: 2px; */
-      line-height: 0px;
-    }
-
-
-
-    .sim1:hover img {
-      scale: 1.05;
-      /* transform: rotate(-7deg); */
-    }
-
-    .sim1:hover p {
-      color: #1C2E4a;
-    }
-
-
-    /* الصفحات */
-    .page {
-      /* backdrop-filter: blur(7px); */
-      position: fixed;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 100dvh;
-      background: rgba(251, 254, 255, 1);
-      border-radius: 50px 50px 0 0;
-      box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.2);
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-      z-index: 500;
-    }
-
-    .page.active {
-      transform: translateY(10px);
-      text-align: center;
-    }
-
-    .page-header {
-      /* backdrop-filter: blur(5px); */
-      /* background: rgba(255, 0, 0, 0.077); */
-      /* border-radius: 50px; */
-      display: none;
-      height: fit-content;
-      /* position: relative; */
-      /* border: #1C2E4a 2px solid; */
-      padding: 0px 10px 0px 1px;
-      text-align: center;
-      display: grid;
-      grid-template-columns: 1fr;
-      border-bottom: .2px solid rgb(37, 191, 237);
-      box-shadow: rgba(37, 190, 237, 0.497) 0px 0px 2px 0px;
-      cursor: grab;
-      line-height: 0;
-      font-size: 1.53rem;
-    }
-
-    .dropArea {
-
-      /* backdrop-filter: blur(5px); */
-      background: none;
-      display: flex;
-      color: rgb(37, 191, 237);
-      /* display: none; */
-      justify-content: space-between;
-      padding-right: 30px;
-      padding-left: 20px;
-    }
-
-    .page-content {
-      position: relative;
-      flex: 1;
-      padding: 0px 20px 50px 20px;
-      overflow-y: auto;
-      font-size: 18px;
-    }
-
-    .drag-area {
-      width: 70px;
-      height: 2px;
-      background: #ccc;
-      border-radius: 3px;
-      margin: 8px auto;
-    }
-
-    .drag-area2 {
-      display: none;
-      width: 60%;
-      height: 1px;
-      background: #ccc;
-      border-radius: 3px;
-      margin: 8px auto;
-    }
-
-    .span {
-      /* border: #da8585 solid 2px; */
-      /* overflow: hidden; */
-      cursor: pointer;
-      ;
-    }
-
-    .homeConten1 {
-      /* position: fixed; */
-      /* bottom: -10px; */
-      /* left: 0; */
-      width: 95%;
-      height: 100dvh;
-      border-radius: 50px;
-      background: rgba(11, 183, 235, 0.893);
-      /* border-radius: 50px 50px 0 0; */
-      box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.2);
-      /* transform: translateY(100%); */
-      transition: all 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-      z-index: 500;
-      margin: 4px auto 0px;
-    }
-
-    .homeContent {
-      /* position: fixed; */
-      /* bottom: -10px; */
-      /* left: 0; */
-      width: 100%;
-      height: 100dvh;
-      /* border-radius: 20px; */
-      background: rgba(11, 183, 235, 0.893);
-      /* border-radius: 50px 50px 0 0; */
-      box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.2);
-      /* transform: translateY(100%); */
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-      z-index: 500;
-      margin: 0px auto 0px;
-    }
-  </style>
-  <style>
-    .fereqa-card-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 50px;
-    }
-
-    .fereqa-card {
-      position: absolute;
-      top: 0%;
-      width: 220px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      z-index: 100;
-    }
-
-
-    .fereqa-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    .fereqa-arrow {
-      transition: transform .25s ease;
-      color: rgb(37, 191, 237);
-    }
-
-    .fereqa-card.open .fereqa-arrow {
-      transform: rotate(180deg);
-    }
-
-    .fereqa-options {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s cubic-bezier(.2, .9, .2, 1), padding .25s;
-      border-top: 1px solid #eee;
-      padding: 0;
-    }
-
-    .fereqa-card.open .fereqa-options {
-      padding: 8px 0;
-    }
-
-    .fereqa-option {
-      display: block;
-      padding: 10px 14px;
-      text-align: center;
-      text-decoration: none;
-      color: #1C2E4a;
-      font-weight: 600;
-      transition: background .15s, color .15s;
-    }
-
-    .fereqa-option:hover {
-      background: #f1f5ff;
-      color: rgb(37, 191, 237);
-    }
-
-    #selectedFereqa {
-      color: rgb(37, 191, 237);
-      font-weight: 700;
-    }
-
-    .tarteep {
-      margin: 20px;
-      display: flex;
-      justify-content: space-around;
-      align-content: center;
-      text-align: center;
-    }
-
-    .notification {
-      /* background-color: red; */
-      width: 30px;
-      margin-top: 20px;
-      /* height: 30px; */
-    }
-  </style>
-  <style>
-    /* overlay للكارد */
-    .overlay {
-      display: none;
-      /* مخفي في البداية */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* background: rgba(0,0,0,0.3); */
-      justify-content: center;
-      align-items: flex-start;
-      /* يبدأ من فوق */
-      padding-top: 50px;
-      /* مسافة من الأعلى */
-      z-index: 1000;
-      overflow: hidden;
-    }
-
-    /* تصميم الكارد */
-    .notCard {
-      backdrop-filter: blur(10px);
-      background: #ffffff82;
-      padding: 10px 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(25, 25, 25, 0.3);
-      position: relative;
-      width: 300px;
-      max-height: 500px;
-      overflow: auto;
-      text-align: center;
-      border: rgba(37, 190, 237, 0.4) 5px solid;
-      transform: translateY(-100px);
-      opacity: 0;
-      transition: all 0.3s ease;
-      color: rgb(37, 191, 237);
-    }
-
-    /* حالة الكارد بعد الظهور */
-    .overlay.show .notCard {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    /* زر الإغلاق */
-    .clossse-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #fff;
-      border: none;
-      background-color: rgb(37, 191, 237);
-      width: 10px;
-      height: 10px;
-      border-radius: 50% 50% 25% 50%;
-      box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-    }
-
-    /* زر فتح الكارد */
-    .opennn-btn {
-      position: relative;
-      /* top: 20px; */
-      /* right: 15px; */
-      margin: 18px auto;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #fff;
-      border: none;
-      background-color: rgb(255, 255, 255);
-      width: 30px;
-      height: 30px;
-      border-radius: 50% 50% 25% 50%;
-      box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.441);
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
-
-    .not {
-      /* position: absolute; */
-      /* top: -20px; */
-      /* left: -10px; */
-      /* margin: 18px auto; */
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      /* color: #05a012; */
-      border: none;
-      background-color: rgb(37, 191, 237);
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      box-shadow: 0px 0px 0px 5px rgba(37, 190, 237, 0.4);
-    }
-
-    .notF {
-      color: white;
-      font-weight: 700;
-      line-height: 0;
-      cursor: pointer;
-    }
-
-    .tarteep h2 {
-      margin-top: 30px;
-      color: rgb(255, 255, 255);
-    }
-  </style>
-  <style>
-    .cardQue {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 220px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      z-index: 10;
-    }
-
-    .cardHeaderQue {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    .arrowQue {
-      transition: transform .25s ease;
-      color: #1C2E4a;
-    }
-
-    .cardQue.open .arrowQue {
-      transform: rotate(180deg);
-    }
-
-    .optionsQue {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .30s cubic-bezier(.2, .9, .2, 1), padding .25s;
-      border-top: 1px solid #eee;
-      padding: 0;
-    }
-
-    .cardQue.open .optionsQue {
-      padding: 8px 0;
-    }
-
-    .optionQue {
-      padding: 10px 14px;
-      cursor: pointer;
-      background: #fff;
-      transition: background .15s;
-      text-align: center;
-    }
-
-    .optionQue:hover {
-      background: #f1f5ff;
-    }
-
-    .separatorQue {
-      height: 1px;
-      width: 60%;
-      background: #e0e0e0;
-      margin: 8px auto;
-      border-radius: 2px;
-    }
-
-    #selectedTermQue {
-      color: rgb(37, 191, 237);
-      font-weight: 700;
-      margin-right: 6px;
-    }
-
-    .contentQue {
-      width: min(900px, 92%);
-      margin: 0 auto;
-      border-radius: 12px;
-      padding: 14px;
-      opacity: 0;
-      transform: translateY(6px);
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity .2s ease, transform .2s ease, max-height .0s ease;
-    }
-
-    .contentQue.activeQue {
-      opacity: 1;
-      transform: none;
-      max-height: 1200px;
-      margin: 100px auto;
-    }
-
-    .CarddQue {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
-      overflow: hidden;
-    }
-
-    .CarddHeaderQue {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      cursor: pointer;
-    }
-
-    .CarddHeaderQue h3 {
-      /* font-family: cursive; */
-      font-weight: 900;
-      margin: 0;
-      font-size: 18px;
-      color: #1C2E4a;
-    }
-
-    .CarddContentQue {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease;
-      padding: 0 20px;
-      color: #444;
-      font-size: 14px;
-    }
-
-    .CarddQue.openQue .arrowQue {
-      transform: rotate(180deg);
-    }
-
-    .CarddContentQue .itemQue {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-    }
-
-    .circleQue {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-left: 10px;
-      flex-shrink: 0;
-    }
-
-    .blueQue {
-      background: rgb(37, 191, 237);
-      box-shadow: 0px 0px 0px 3px rgba(37, 190, 237, 0.4);
-    }
-
-    .redQue {
-      background: #ff4d4f;
-      box-shadow: 0px 0px 0px 3px hsl(359, 100%, 65%, 0.4);
-    }
-
-    .orangeQue {
-      background: #ffa940;
-      box-shadow: 0px 0px 0px 3px hsla(33, 100%, 63%, 0.4);
-    }
-
-    .blueH4Que {
-      color: rgb(37, 191, 237);
-    }
-
-    .redH4Que {
-      color: hsl(359, 100%, 65%);
-    }
-
-    .orangeH4Que {
-      color: hsl(33, 100%, 63%);
-    }
-
-    #term2Que {
-      margin-top: 75px !important;
-    }
-
-    .notCard .webLink {
-      font-size: 20px;
-    }
-  </style>
 </head>
 
 <body>
   <div class="homeContent">
     <div class="tarteep">
+      <div class="notF" id="" >
+        <div class="opennn-btn" style="background: rgba(255, 0, 0, 0); box-shadow: 0px 0px 0px red">
+          <div class="mShare">
+            <img src="imgs/share.svg" alt="">
+          </div>
+        </div>
+        <p>مشاركة</p>
+      </div>
+
       <div>
-        <h2>الصفحة الرئيسية</h2>
+        <h2>حاسبات ومعلومات</h2>
+        <h3>العريــــــــــــش</h3>
+        <!-- <h3>قناة السويس</h3> -->
       </div>
       <div>
-
+        <!-- زر فتح الكارد -->
         <div class="notF" id="opennnBtn">
           <div class="opennn-btn">
             <div class="not" id=""></div>
           </div>
           <p>الإشعارات</p>
         </div>
+        <!-- الكارد -->
         <div class="overlay" id="messageCard">
           <div class="notCard" id="notificContent">
             <div class="clossse-btn " id="clossseBtn"></div>
-            <h2 class="webLink" dir="ltr"> [ 2/10/2025 ] تحديث</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 6</h4>
+            <!-- <h2 class="webLink" dir="ltr"> ( 02/10/2025 ) تحديـــــــث</h2>
+            <h4>نسخة تجريبية من الموقع يا باشا 6</h4> -->
+            <h2 class="webLink">يهمـــــــــــــــــــــــــــــك</h2>
+            <h4>اختار فرقتك عشان تعرف كل جديد</h4>
+            <h2 class="webLink">للتواصــــــــــــــــــل</h2>
+            <h4>لو عندك أي اقتراحات أو مشاكل تواصل معايا من صفححة احنا مين</h4>
+            <!-- <h2 class="webLink">بداية الموقع ( 13/12/2025 )</h2>
+            <h4> تتمتع بأحدث نسخة من الموقع </h4> -->
+            <h2 class="webLink">التحديـــــــــــــــثات</h2>
+            <h4> تتمتع بأحدث نسخة من الموقع </h4>
+            <h2 class="webLink">النســــــــــــــــــــــخة</h2>
+            <h4>Version 2.1</h4>
           </div>
         </div>
       </div>
@@ -986,6 +70,50 @@
           <a href="le4.html" class="fereqa-option">الفرقة الرابعة</a>
         </div>
       </div>
+    </div>
+    <!-- <div class="comflict">
+      <div class="countainerShape">
+        <h3>حاسبات ومعلومات العريش</h3>
+      </div>
+    </div> -->
+    <div class="comflict">
+      <div class="countainerShape">
+        <div class="boxx b1">1</div>
+        <div class="boxx b2">2</div>
+        <div class="boxx b3">3</div>
+        <div class="boxx b4">4</div>
+        <div class="boxx b5">5</div>
+        <div class="boxx b6">6</div>
+        <div class="boxx b7">7</div>
+        <div class="boxx spedd b8">8</div>
+        <div class="boxx spedd b9">9</div>
+        <div class="boxx b10">10</div>
+        <div class="boxx spedd b11">11</div>
+        <div class="boxx spedd b12">12</div>
+        <div class="boxx b13">13</div>
+        <div class="boxx b14 spedd">14</div>
+        <div class="boxx b15 spedd">15</div>
+        <div class="boxx b16">16</div>
+        <div class="boxx b17 ">17</div>
+        <div class="boxx b18">18</div>
+        <div class="boxx b19">19</div>
+        <div class="boxx b20 spedd">20</div>
+        <div class="boxx b21 spedd">21</div>
+        <div class="boxx b22 spedd">22</div>
+        <div class="boxx b23 spedd">23</div>
+        <div class="boxx b24">24</div>
+        <div class="boxx b25">25</div>
+        <div class="boxx b26 spedd">26</div>
+        <div class="boxx b27 spedd">27</div>
+        <div class="boxx b28">28</div>
+        <div class="boxx b29">29</div>
+        <div class="boxx b30">30</div>
+      </div>
+    </div>
+    <div class="warnning">
+      <div class="lineTop"></div>
+      <h3>هذا الموقع مصمم للموبايل والتابلت بشكل أساسي بعض المميزات والمقاسات غير مدعومة على أجهزة الكمبيوتر</h3>
+      <div class="lineBottom"></div>
     </div>
   </div>
   <div class="center">
@@ -1011,7 +139,7 @@
       <div class="sim1">
         <div class="span" onclick="openPage('page3')">
           <img src="imgs/res-be.svg" alt="">
-          <p>مصادر</p>
+          <p>المتجر</p>
         </div>
       </div>
       <div class="sim1">
@@ -1053,7 +181,7 @@
       <div id="term1" class="content">
         <div class="item">
           <!-- <div class="circle red"></div> -->
-          <h2 style="margin-top: 150px " class="redH4">الصفحة غير موجودة !</h2>
+          <h2 style="margin-top: 150px " class="orangeH4">الصفحة غير موجودة !</h2>
           <h5 class="blueH4">ارجع اختار الفرقة من <span class="webLink" onclick="closeAllPages()"
               style="cursor: pointer;">الصفحة الرئيسية</span></h5>
         </div>
@@ -1061,7 +189,7 @@
       <div id="term2" class="content">
         <div class="item">
           <!-- <div class="circle red"></div> -->
-          <h2 style="margin-top: 150px " class="redH4">الصفحة غير موجودة !</h2>
+          <h2 style="margin-top: 150px " class="orangeH4">الصفحة غير موجودة !</h2>
           <h5 class="blueH4">ارجع اختار الفرقة من <span class="webLink" onclick="closeAllPages()"
               style="cursor: pointer;">الصفحة الرئيسية</span></h5>
         </div>
@@ -1099,7 +227,7 @@
 
         <div class="itemQue">
           <!-- <div class="circle red"></div> -->
-          <h2 style="margin-top: 150px " class="redH4">الصفحة غير موجودة !</h2>
+          <h2 style="margin-top: 150px " class="orangeH4">الصفحة غير موجودة !</h2>
           <h5 class="blueH4">ارجع اختار الفرقة من <span class="webLink" onclick="closeAllPages()"
               style="cursor: pointer;">الصفحة الرئيسية</span></h5>
         </div>
@@ -1109,7 +237,7 @@
       <div id="term2Que" class="contentQue">
 
         <div class="itemQue">
-          <h2 style="margin-top: 150px " class="redH4">الصفحة غير موجودة !</h2>
+          <h2 style="margin-top: 150px " class="orangeH4">الصفحة غير موجودة !</h2>
           <h5 class="blueH4">ارجع اختار الفرقة من <span class="webLink" onclick="closeAllPages()"
               style="cursor: pointer;">الصفحة الرئيسية</span></h5>
         </div>
@@ -1123,7 +251,7 @@
       <div class="drag-area"></div>
       <div class="dropArea">
 
-        <h2>المصادر</h2>
+        <h2> المتجر</h2>
         <button class="close-btn" onclick="closeAllPages()">
           <div class="arrow circle blueSelect2"></div>
         </button>
@@ -1131,10 +259,10 @@
       <div class="drag-area2"></div>
     </div>
     <div class="page-content">
-      <p>هحط هنا </p>
-      <h4 class="redH4">كورسات</h4>
-      <h4 class="orangeH4">كتب</h4>
-      <h4 class="blueH4">مواقع</h4>
+      
+      <h4 class="blueH4" style="margin-top: 200px;">لسه والله يا غالي !</h4>
+      <!-- <h4 class="orangeH4">كتب</h4> -->
+      <!-- <h4 class="blueH4">مواقع</h4> -->
     </div>
   </div>
 
@@ -1151,13 +279,95 @@
       <div class="drag-area2"></div>
     </div>
     <div class="page-content">
-      <p> شوية رغي ..</p>
+      <div class="myInfo">
+        <div class="socialMedia">
+          <a href="https://www.instagram.com/mohamed27.k?igsh=M3B2cWhtajJrYnQw&utm_source=qr" style="text-decoration: none; color: inherit;"><div class="imgSocial1"></div></a>
+          <a href="https://www.linkedin.com/in/mohamed-mansour27/" style="text-decoration: none; color: inherit;"><div class="imgSocial3"></div></a>
+          <a href="https://github.com/mohamedmansour277" style="text-decoration: none; color: inherit;"><div class="imgSocial4"></div></a>
+          <a href="https://wa.me/+201029456680" style="text-decoration: none; color: inherit;"><div class="imgSocial5"></div></a>
+        </div>
+        <div class="myInfoContent">
+          <div class="infoText">
+            <div class="infoName">
+              <p>محمد منصور حسن</p>
+            </div>
+            <div class="linem"></div>
+            <div class="infoTitle">
+              <p style="margin-right: 0;">front end</p>
+              <p>ui ux </p>
+            </div>
+          </div>
+          <div class="infoPic"></div>
+        </div>
+      </div>
+      
+      <div class="thanksCard">
+        <div class="lineth1"></div>
+        <div class="lineth2">
+          <h2>شكـــــرا</h2>
+          <!-- <p>صناع المحتوى</p> -->
+        </div>
+        <div class="lineth3"></div>
+      </div>
+      <div class="thanksContent">
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0);">محمد فايز  سلامه</p>
+          <span class=" circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human ">
+          <p style="background-color: rgba(255, 255, 255, 0);">إسلام محسن سالم</p>
+          <span class=" circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human ">
+          <p style="background-color: rgba(255, 255, 255, 0); ">انتصار مجدي العطار</p>
+          <span class=" circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0);">جروب <b>Codology</b></p>
+          <span class=" circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثالثة</p>
+            <p>داتا</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0);">جروب <b>Chat-FCI</b></p>
+          <span class=" circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>داتا</p>
+          </div>
+        </div>
+        <div class="human humanGreen">
+          <a href="https://wa.me/+201029456680" style="text-decoration:none; color:inherit;">
+            <p style="background-color: rgba(255, 255, 255, 0);">+ إضافة اسمك</p>
+            <span class=" circle green"></span>
+            <div class="lineThan">
+              <p>الفرقة ..</p>
+              <p>عملت ..</p>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
     </div>
   </div>
   <script>
     let currentPage = null;
 
-    // الأيقونات (be & af)
     const icons = {
       page1: { default: "imgs/book-be.svg", active: "imgs/book-af.svg" },
       page2: { default: "imgs/que-be.svg", active: "imgs/que-af.svg" },
@@ -1165,7 +375,7 @@
       page4: { default: "imgs/about-be.svg", active: "imgs/about-af.svg" },
       home: { default: "imgs/home-be.svg", active: "imgs/home-af.svg" }
     };
-    //////////////////
+
     window.onload = () => {
       setHomeActive();
     };
@@ -1253,18 +463,18 @@
       header.addEventListener("touchend", () => {
         isDragging = false;
         page.style.transition = "transform 0.4s ease";
-        if (currentY - startY > 100) {
+        if (currentY - startY > 10) {
           page.style.transform = "translateY(100%)";
           setTimeout(() => {
             page.classList.remove("active");
             page.style.transition = "";
-            page.style.transform = "";
+            page.style.transform = ""; 
             if (currentPage === page) currentPage = null;
             resetAll();
             setHomeActive();
           }, 400);
         } else {
-          page.style.transform = "translateY(0)";
+          page.style.transform = "translateY(10)";
         }
       });
     });
@@ -1277,8 +487,8 @@
 
       setTimeout(() => {
         page.classList.remove("active");
-        page.style.transition = "";
-        page.style.transform = "";
+        page.style.transition = ""; 
+        page.style.transform = "";  
         if (currentPage === page) currentPage = null;
         resetAll();
         setHomeActive();
@@ -1319,6 +529,7 @@
         newPage.classList.add("active");
         currentPage = newPage;
       }
+
 
       const homeDiv = document.querySelector('.homeContent, .homeConten1');
       if (homeDiv) {
@@ -1403,7 +614,7 @@
       const header = document.getElementById('cardHeaderrr');
       const feqeraOption = document.getElementById('feqeraOption');
       const options = feqeraOption.querySelectorAll('.fereqa-option');
-      // لااااااااااااااااااااااااااااااااااااااا
+
       const savedTerm = localStorage.getItem(STORAGE_KEY);
       if (savedTerm) {
         const savedOption = Array.from(options).find(opt => opt.dataset.fereqa === savedTerm);
@@ -1411,12 +622,12 @@
           window.location.href = savedOption.href;
         }
       }
-      // /////////////////////////////////
+
       header.addEventListener('click', () => {
         const isOpen = card.classList.toggle('open');
         feqeraOption.style.maxHeight = isOpen ? feqeraOption.scrollHeight + 'px' : null;
       });
-      // //////////////////////////////////
+
       options.forEach(opt => {
         opt.addEventListener('click', () => {
           localStorage.setItem(STORAGE_KEY, opt.dataset.fereqa);
@@ -1449,7 +660,7 @@
     });
 
     messageCard.addEventListener('click', (e) => {
-      if (!notificContent.contains(e.target)) {
+      if (!notificContent.contains(e.target)) { 
         closeCard();
       }
     });
@@ -1458,7 +669,7 @@
       messageCard.classList.remove('show');
       setTimeout(() => {
         messageCard.style.display = 'none';
-      }, 500);
+      }, 500); 
     }
   </script>
   <script>
@@ -1516,6 +727,16 @@
         if (targetQue) targetQue.classList.add('activeQue');
       }
     });
+    let mShare = document.querySelector(".mShare");
+    mShare.onclick = () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'FCI',
+          text: 'داه لينك موقع حاسبات ومعلومات العريش يا صاحبي \n',
+          url: window.location.href
+        });
+      }
+    }
   </script>
 </body>
 

@@ -2,21 +2,17 @@
 <html lang="ar">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FCI Level 1</title>
-  <meta name="theme-color" content="rgb(37, 191, 237)" />
-  <link rel="icon" type="img" href="imgs/icon1.svg">
+  <link rel="icon" type="img" href="imgs/icon1.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
   <style>
-    html, body {
-      overscroll-behavior: contain;
-    }
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
     * {
@@ -26,7 +22,7 @@
 
     /* Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-      width: 2px;
+      width: 16px;
     }
 
     *::-webkit-scrollbar-track {
@@ -53,17 +49,15 @@
       z-index: 10;
     }
 
-
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 14px;
-      cursor: pointer;
     }
 
     .arrow {
-      transition: transform .25s ease;
+      transition: transform 0.25s ease;
     }
 
     .card.open .arrow {
@@ -71,11 +65,11 @@
     }
 
     .options {
-
       max-height: 0;
       /* float: center; */
       overflow: hidden;
-      transition: max-height .30s cubic-bezier(.2, .9, .2, 1), padding .25s;
+      transition: max-height 0.3s cubic-bezier(0.2, 0.9, 0.2, 1),
+        padding 0.25s;
       border-top: 1px solid #eee;
       padding: 0;
     }
@@ -86,9 +80,9 @@
 
     .option {
       padding: 10px 14px;
-      cursor: pointer;
+       
       background: #fff;
-      transition: background .15s;
+      transition: background 0.15s;
       text-align: center;
     }
 
@@ -122,7 +116,7 @@
       transform: translateY(6px);
       max-height: 0;
       overflow: hidden;
-      transition: opacity .2s ease, transform .2s ease, max-height .0s ease;
+      transition: opacity 0.2s ease, transform 0.2s ease, max-height 0s ease;
     }
 
     .content.active {
@@ -133,7 +127,7 @@
       /* تم الإضافة: تطبيق الهامش فقط عند تفعيل المحتوى */
     }
 
-    @media (max-width:420px) {
+    @media (max-width: 420px) {
       .card {
         width: 200px;
       }
@@ -149,6 +143,7 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       margin-bottom: 15px;
       overflow: hidden;
+      padding: 2px 10px 0px;
     }
 
     .Cardd-headerOfCard {
@@ -156,27 +151,29 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
-      cursor: pointer;
+       
     }
 
     .Cardd-headerOfCard h3 {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
       font-weight: 700;
       margin: 0;
-      font-size: 18px;
-      color: #1C2E4a;
+      font-size: 21px;
+      color: #1c2e4a;
     }
 
     .arrow {
-      transition: transform .3s ease;
+      transition: transform 0.3s ease;
       font-size: 18px;
-      color: #1C2E4a;
+      color: #1c2e4a;
     }
 
     .Cardd-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .4s ease;
+      transition: max-height 0.4s ease;
       padding: 0 20px;
       color: #444;
       font-size: 14px;
@@ -184,7 +181,6 @@
 
     .Cardd.open .arrow {
       transform: rotate(180deg);
-
     }
 
     /* === شكل العنصر الداخلي === */
@@ -264,9 +260,9 @@
     }
 
     .greenH4 {
+      padding: 2px 10px 0px;
       color: #09ae32;
     }
-
 
     @keyframes mansblue {
       0% {
@@ -306,7 +302,7 @@
       border: #ff4d4f solid 2px;
       border-radius: 5px;
       box-shadow: 0px 0px 0px 4px hsl(359, 100%, 65%, 0.4);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     .webLink {
@@ -319,7 +315,7 @@
       border: rgb(37, 191, 237) solid 2px;
       border-radius: 5px;
       box-shadow: 0px 0px 0px 4px rgba(37, 190, 237, 0.4);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     .bookLink {
@@ -332,18 +328,19 @@
       border: #ffa940 solid 2px;
       border-radius: 5px;
       box-shadow: 0px 0px 0px 4px hsla(33, 100%, 63%, 0.4);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     .whatsLink {
-      font-size: 11px;
-      margin-right: 4px;
+      font-size: 12px;
+      margin-right: 10px;
       background: rgba(235, 242, 232, 0);
       color: #09ae32;
       text-decoration: none;
-      border: #09ae32 dashed 1.4px;
-      border-radius: 50% 50% 25% 50%;
-      transition: all .3s ease;
+      border: #09ae32 dashed 1.5px;
+      border-radius: 50% 50% 50% 50%;
+      transition: all 0.3s ease;
+      scale: .8;
     }
 
     .webLink:hover,
@@ -373,7 +370,7 @@
       background: #ffffff;
       margin: 0;
       padding: 0;
-      font-family: 'Tajawal', sans-serif;
+      font-family: "Tajawal", sans-serif;
       direction: rtl;
     }
 
@@ -385,7 +382,7 @@
 
     .container {
       backdrop-filter: blur(5px);
-      font-family: 'Tajawal', sans-serif;
+      font-family: "Tajawal", sans-serif;
       width: 100%;
       /* max-width: 800px; */
       height: 70px;
@@ -397,13 +394,12 @@
       justify-content: space-evenly;
       align-content: center;
       gap: 10px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       z-index: 10;
       padding: 5px;
     }
 
     .sim1 {
-
       /* margin: 0px 20px; */
       border-radius: 10px;
       display: inline;
@@ -418,7 +414,6 @@
       text-align: center;
       align-content: center;
     }
-
 
     /* .activeSim {
       background-color: #52677d15;
@@ -437,7 +432,7 @@
       /* height: 30px; */
       /* scale: 1.3; */
       border-radius: 10px;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
     }
 
     .center {
@@ -455,12 +450,10 @@
       color: #63778c;
       font-weight: 700;
       font-size: 11px;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       /* margin-bottom: 2px; */
       line-height: 0px;
     }
-
-
 
     .sim1:hover img {
       scale: 1.05;
@@ -468,9 +461,8 @@
     }
 
     .sim1:hover p {
-      color: #1C2E4a;
+      color: #1c2e4a;
     }
-
 
     /* الصفحات */
     .page {
@@ -508,15 +500,13 @@
       text-align: center;
       display: grid;
       grid-template-columns: 1fr;
-      border-bottom: .2px solid rgb(37, 191, 237);
+      border-bottom: 0.2px solid rgb(37, 191, 237);
       box-shadow: rgba(37, 190, 237, 0.497) 0px 0px 2px 0px;
-      cursor: grab;
       line-height: 0;
       font-size: 1.53rem;
     }
 
     .dropArea {
-
       /* backdrop-filter: blur(5px); */
       background: none;
       display: flex;
@@ -530,7 +520,7 @@
     .page-content {
       position: relative;
       flex: 1;
-      padding: 0px 20px 50px 20px;
+      padding: 0px 20px 200px 20px;
       overflow-y: auto;
       font-size: 18px;
     }
@@ -550,13 +540,6 @@
       background: #ccc;
       border-radius: 3px;
       margin: 8px auto;
-    }
-
-    .span {
-      /* border: #da8585 solid 2px; */
-      /* overflow: hidden; */
-      cursor: pointer;
-      ;
     }
 
     .homeConten1 {
@@ -598,18 +581,11 @@
     }
   </style>
   <style>
-    .fereqa-card-container{
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 50px;
-    }
-
     .fereqa-card {
-      position: absolute;
-      top: 0%;
+      position: fixed;
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 220px;
       background: #fff;
       border-radius: 12px;
@@ -623,11 +599,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 14px;
-      cursor: pointer;
+       
     }
 
     .fereqa-arrow {
-      transition: transform .25s ease;
+      transition: transform 0.25s ease;
       color: rgb(37, 191, 237);
     }
 
@@ -638,7 +614,8 @@
     .fereqa-options {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .3s cubic-bezier(.2, .9, .2, 1), padding .25s;
+      transition: max-height 0.3s cubic-bezier(0.2, 0.9, 0.2, 1),
+        padding 0.25s;
       border-top: 1px solid #eee;
       padding: 0;
     }
@@ -652,9 +629,9 @@
       padding: 10px 14px;
       text-align: center;
       text-decoration: none;
-      color: #1C2E4a;
+      color: #1c2e4a;
       font-weight: 600;
-      transition: background .15s, color .15s;
+      transition: background 0.15s, color 0.15s;
     }
 
     .fereqa-option:hover {
@@ -734,7 +711,7 @@
       right: 15px;
       font-size: 18px;
       font-weight: bold;
-      cursor: pointer;
+       
       color: #fff;
       border: none;
       background-color: rgb(37, 191, 237);
@@ -752,7 +729,7 @@
       margin: 18px auto;
       font-size: 18px;
       font-weight: bold;
-      cursor: pointer;
+       
       color: #fff;
       border: none;
       background-color: rgb(255, 255, 255);
@@ -773,7 +750,7 @@
       /* margin: 18px auto; */
       font-size: 18px;
       font-weight: bold;
-      cursor: pointer;
+       
       /* color: #05a012; */
       border: none;
       background-color: rgb(37, 191, 237);
@@ -787,12 +764,7 @@
       color: white;
       font-weight: 700;
       line-height: 0;
-      cursor: pointer;
-    }
-
-    .tarteep h2 {
-      margin-top: 30px;
-      color: rgb(255, 255, 255);
+       
     }
   </style>
   <style>
@@ -814,12 +786,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 14px;
-      cursor: pointer;
+       
     }
 
     .arrowQue {
-      transition: transform .25s ease;
-      color: #1C2E4a;
+      transition: transform 0.25s ease;
+      color: #1c2e4a;
     }
 
     .cardQue.open .arrowQue {
@@ -829,7 +801,8 @@
     .optionsQue {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .30s cubic-bezier(.2, .9, .2, 1), padding .25s;
+      transition: max-height 0.3s cubic-bezier(0.2, 0.9, 0.2, 1),
+        padding 0.25s;
       border-top: 1px solid #eee;
       padding: 0;
     }
@@ -840,9 +813,9 @@
 
     .optionQue {
       padding: 10px 14px;
-      cursor: pointer;
+       
       background: #fff;
-      transition: background .15s;
+      transition: background 0.15s;
       text-align: center;
     }
 
@@ -873,7 +846,7 @@
       transform: translateY(6px);
       max-height: 0;
       overflow: hidden;
-      transition: opacity .2s ease, transform .2s ease, max-height .0s ease;
+      transition: opacity 0.2s ease, transform 0.2s ease, max-height 0s ease;
     }
 
     .contentQue.activeQue {
@@ -896,21 +869,23 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
-      cursor: pointer;
+       
     }
 
     .CarddHeaderQue h3 {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
       font-weight: 700;
       margin: 0;
-      font-size: 18px;
-      color: #1C2E4a;
+      font-size: 21px;
+      color: #1c2e4a;
     }
 
     .CarddContentQue {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .4s ease;
+      transition: max-height 0.4s ease;
       padding: 0 20px;
       color: #444;
       font-size: 14px;
@@ -969,13 +944,23 @@
       font-size: 20px;
     }
   </style>
+  <link rel="stylesheet" href="who-is-us.css" />
 </head>
 
 <body>
   <div class="homeContent">
     <div class="tarteep">
+      <div class="notF" id="">
+        <div class="opennn-btn" style="background: rgba(255, 0, 0, 0); box-shadow: 0px 0px 0px red">
+          <div class="mShare">
+            <img src="imgs/share.svg" alt="" />
+          </div>
+        </div>
+        <p>مشاركة</p>
+      </div>
       <div>
-        <h2>الصفحة الرئيسية</h2>
+        <h2>حاسبات ومعلومات</h2>
+        <h3>العريــــــــــــش</h3>
       </div>
       <div>
         <!-- زر فتح الكارد -->
@@ -988,19 +973,9 @@
         <!-- الكارد -->
         <div class="overlay" id="messageCard">
           <div class="notCard" id="notificContent">
-            <div class="clossse-btn " id="clossseBtn"></div>
-            <h2 class="webLink" dir="ltr"> [ 2/10/2025 ] تحديث</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 6</h4>
-            <h2 class="webLink">[ تحديث ]</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 5</h4>
-            <h2 class="webLink">[ تحديث ]</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 4</h4>
-            <h2 class="webLink">[ تحديث ]</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 3</h4>
-            <h2 class="webLink">[ تحديث ]</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 2</h4>
-            <h2 class="webLink">[ تحديث ]</h2>
-            <h4>نسخة تجريبية من الموقع يا باشا 1</h4>
+            <div class="clossse-btn" id="clossseBtn"></div>
+            <h2 class="webLink" dir="ltr">مرحب</h2>
+            <h4>مفيش جديد</h4>
           </div>
         </div>
       </div>
@@ -1009,7 +984,7 @@
       <div class="fereqa-card" id="fereqaCard">
         <div class="fereqa-card-header" id="cardHeaderrr">
           <span id="selectedFereqa">الفرقة الأولى</span>
-          <span class="fereqa-arrow">▼</span>
+          <span class="circle blueSelect"></span>
         </div>
         <div class="fereqa-options" id="feqeraOption">
           <a href="" class="fereqa-option">الفرقة الأولى</a>
@@ -1019,36 +994,80 @@
         </div>
       </div>
     </div>
+    <!-- <div class="comflict">
+      <div class="countainerShape">
+        <h3>حاسبات ومعلومات العريش</h3>
+      </div>
+    </div> -->
+    <div class="comflict">
+      <div class="countainerShape">
+        <div class="boxx b1">1</div>
+        <div class="boxx b2">2</div>
+        <div class="boxx b3">3</div>
+        <div class="boxx b4">4</div>
+        <div class="boxx b5">5</div>
+        <div class="boxx b6">6</div>
+        <div class="boxx b7">7</div>
+        <div class="boxx spedd b8">8</div>
+        <div class="boxx spedd b9">9</div>
+        <div class="boxx b10">10</div>
+        <div class="boxx spedd b11">11</div>
+        <div class="boxx spedd b12">12</div>
+        <div class="boxx b13">13</div>
+        <div class="boxx b14 spedd">14</div>
+        <div class="boxx b15 spedd">15</div>
+        <div class="boxx b16">16</div>
+        <div class="boxx b17">17</div>
+        <div class="boxx b18">18</div>
+        <div class="boxx b19">19</div>
+        <div class="boxx b20 spedd">20</div>
+        <div class="boxx b21 spedd">21</div>
+        <div class="boxx b22 spedd">22</div>
+        <div class="boxx b23 spedd">23</div>
+        <div class="boxx b24">24</div>
+        <div class="boxx b25">25</div>
+        <div class="boxx b26 spedd">26</div>
+        <div class="boxx b27 spedd">27</div>
+        <div class="boxx b28">28</div>
+        <div class="boxx b29">29</div>
+        <div class="boxx b30">30</div>
+      </div>
+    </div>
+    <div class="warnning">
+      <div class="lineTop"></div>
+      <h3>هذا الموقع مصمم للموبايل والتابلت بشكل أساسي بعض المميزات والمقاسات غير مدعومة على أجهزة الكمبيوتر</h3>
+      <div class="lineBottom"></div>
+    </div>
   </div>
   <div class="center">
     <div class="container">
       <div class="sim1">
         <div class="span" onclick="openPage('page1')">
-          <img src="imgs/book-be.svg" alt="">
+          <img src="imgs/book-be.svg" alt="" />
           <p>ملخصات</p>
         </div>
       </div>
       <div class="sim1">
         <div class="span" onclick="openPage('page2')">
-          <img src="imgs/que-be.svg" alt="">
+          <img src="imgs/que-be.svg" alt="" />
           <p>بنك أسئلة</p>
         </div>
       </div>
       <div class="sim1">
         <div class="span" onclick="closeAllPages()">
-          <img src="imgs/home-af.svg" alt="">
+          <img src="imgs/home-af.svg" alt="" />
           <p>الرئيسية</p>
         </div>
       </div>
       <div class="sim1">
         <div class="span" onclick="openPage('page3')">
-          <img src="imgs/res-be.svg" alt="">
-          <p>مصادر</p>
+          <img src="imgs/res-be.svg" alt="" />
+          <p>المتجر</p>
         </div>
       </div>
       <div class="sim1">
         <div class="span" onclick="openPage('page4')">
-          <img src="imgs/about-be.svg" alt="">
+          <img src="imgs/about-be.svg" alt="" />
           <p>احنا مين</p>
         </div>
       </div>
@@ -1090,39 +1109,36 @@
           </div>
           <div class="Cardd-content">
             <div class="item">
-              <div class="circle red"></div>
-              <h4 class="redH4"><b>فيديــــــــــــــــــو يوتيوب من </b><a class="vidLink"
-                  href="https://youtu.be/07AC2Syf4Yg" target="_blank">هنا</a></h4>
+              <div class="circle blue"></div>
+              <h4 class="blueH4">
+                <b>ملخــــــــــــــــــــــــــــــــــــــص من </b><a class="webLink"
+                  href="https://drive.google.com/drive/folders/1-ODgT5cKYQ9ujFtcX4N4Huq-nNaQw444?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4"><b>مرجــــــــــــــــــــــــــــع للغة من </b><a class="webLink"
-                  href="https://www.w3schools.com/cpp/default.asp" target="_blank">هنا</a></h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4"><b>Online Compiler مــــــن </b><a class="webLink"
-                  href="https://www.programiz.com/cpp-programming/online-compiler/" target="_blank">هنا</a></h4>
+              <h4 class="blueH4">
+                <b>ملخص التحويلات من </b><a class="webLink"
+                  href="https://drive.google.com/file/d/1XU7T5Omu7RF39AlVFjhyL9iDee3VZOpA/view?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Computers</h3>
+            <h3 class="blueH4">Introduction to IS</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="orangeH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">
+                <b>ملخـــــــــــــــــــــــــــــــــــــــص من </b><a class="webLink"
+                  href="https://drive.google.com/file/d/1zl-QN30W6PpjG6G7lZgBNm_Z7sHKcxy9/view?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -1133,16 +1149,20 @@
           </div>
           <div class="Cardd-content">
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle red"></div>
+              <h4 class="redH4">
+                <b>فيديوهات الشـرح من </b><a class="vidLink"
+                  href="https://drive.google.com/drive/folders/1MSwO5xm8tTcdoYlSH-oD_zbkEDWu1hp9?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">
+                <b>ملخـــــــــــــــــــــــــــــــــــــص  من </b><a class="webLink"
+                  href="https://drive.google.com/drive/folders/1MVAanfkagq7bQhUuUaBKz2hXwkh4fzJ0?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -1154,103 +1174,63 @@
           <div class="Cardd-content">
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">
+                <b>ملخـــــــــــــــــــــــــــــــصات  من </b><a class="webLink"
+                  href="https://drive.google.com/drive/folders/1-Ryo-9Kd2O9J0_ZXcrmswFJej41i9F9O?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">
+                <b>ملخص كودولـوجي من </b><a class="webLink"
+                  href="https://drive.google.com/file/d/1aP4Mv2wKvs4a7v6DNx977A2hclEo8Ex1/view?usp=sharing"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
+            <h3 class="blueH4">Calculas</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle blue" style="background-color: #63778c; box-shadow: 0px 0px 0px 3px #63778c34;"></div>
+              <h4 class="orangeH4">
+                <b style="color: #63778c;">لسه والله يا غالي </b>
+              </h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
+            <h3 class="blueH4">Electronics</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">
+                <b> ملفــات الشـــرح من </b><a class="webLink"
+                  href="https://drive.google.com/drive/folders/1Dy2TpfAqzay4gh4eD6HjF7YW3sVsY70n?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
-        <div class="Cardd">
-          <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
-            <span class="arrow">▼</span>
-          </div>
-          <div class="Cardd-content">
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-          </div>
-        </div>
-        <div class="Cardd">
-          <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
-            <span class="arrow">▼</span>
-          </div>
-          <div class="Cardd-content">
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-          </div>
-        </div>
-        <div class="Cardd" style="width: 200px; margin: 40px auto; padding: 5px 30px; background: #ffffff1d;">
+        <div class="Cardd whatsLink" style="
+              width: 200px;
+              margin: 40px auto;
+              padding: 20px 30px 10px;
+              background: #ffffff61;
+            ">
           <div class="item">
             <!-- <div class="circle"></div> -->
-            <h4 class="greenH4"><b>إضافة ملخص </b><a class="whatsLink" href="https://wa.me/+201029456680"
-                target="_blank" style="padding: 3px 10px;">+</a></h4>
+            <a href="https://wa.me/+201029456680" target="_blank" style="text-decoration: none; color: inherit">
+              <h4 class="greenH4"><b>إضافــــــة ملخص </b></h4>
+            </a>
           </div>
         </div>
       </div>
@@ -1263,171 +1243,162 @@
           <div class="Cardd-content">
             <div class="item">
               <div class="circle red"></div>
-              <h4 class="redH4"><b>فيديــــــــــــــــــو يوتيوب من </b><a class="vidLink"
-                  href="https://youtu.be/07AC2Syf4Yg" target="_blank">هنا</a></h4>
+              <h4 class="redH4">
+                <b>فيديــــــــــــــــــو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+                  target="_blank">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4"><b>مرجــــــــــــــــــــــــــــع للغة من </b><a class="webLink"
-                  href="https://www.w3schools.com/cpp/default.asp" target="_blank">هنا</a></h4>
+              <h4 class="blueH4">
+                <b>مرجــــــــــــــــــــــــــــع للغة من </b><a class="webLink"
+                  href="https://www.w3schools.com/cpp/default.asp" target="_blank">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4"><b>Online Compiler مــــــن </b><a class="webLink"
-                  href="https://www.programiz.com/cpp-programming/online-compiler/" target="_blank">هنا</a></h4>
+              <h4 class="blueH4">
+                <b>Online Compiler مــــــن </b><a class="webLink"
+                  href="https://www.programiz.com/cpp-programming/online-compiler/" target="_blank">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Computers</h3>
+            <h3 class="blueH4">Object Programming (OOP)</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
               <div class="circle orange"></div>
-              <h4 class="orangeH4"><b>ملخص من </b><a class="bookLink"
-                  href="https://www.programiz.com/cpp-programming/online-compiler/">هنا</a></h4>
+              <h4 class="orangeH4">
+                <b>ملخص من </b><a class="bookLink"
+                  href="https://www.programiz.com/cpp-programming/online-compiler/">هنا</a>
+              </h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Probability and Statistic</h3>
+            <h3 class="blueH4">Linear Algebra</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">English</h3>
+            <h3 class="blueH4">System Analysis and Design</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
             <div class="item">
               <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <h4 class="blueH4">ملخص</h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
+            <h3 class="blueH4">Discrete Structure</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle red"></div>
+              <h4 class="redH4">
+                <b>قائمة تشغيـــــــــــــــــــــــــــــــل من </b><a class="vidLink"
+                  href="https://youtube.com/playlist?list=PLxIvc-MGOs6gZlMVYOOEtUHJmfUquCjwz&si=b4mzSOvn5ShF3mIf">هنا</a>
+              </h4>
             </div>
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle orange"></div>
+              <h4 class="orangeH4">
+                <b>المحاضرات الأساسية من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/17UtMbi_YQmm4BAcUYgtr3tHYZ7eO54zP/view?usp=drive_link">هنا</a>
+              </h4>
             </div>
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle orange"></div>
+              <h4 class="orangeH4">
+                <b>ملخــــــــــص المنهـــــــــــــــــج من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1jXGsI37isSGgvC59XPWmkSiRFZfhZEml/view?usp=drive_link">هنا</a>
+              </h4>
+            </div>
+            <div class="item">
+              <div class="circle orange"></div>
+              <h4 class="orangeH4">
+                <b>ملخـــــــص تاني للمنهـــج من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1lUfQc7K_VWkyG40aAlbU50HK1NX03b7X/view?usp=drivesdk">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
         <div class="Cardd">
           <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
+            <h3 class="blueH4">English 2</h3>
             <span class="arrow">▼</span>
           </div>
           <div class="Cardd-content">
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle orange"></div>
+              <h4 class="orangeH4">
+                <b>ملخــــــــــص المنهـــــــــــــــــج من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1MfgHS7UvG_GcjsX_DspjC0oDgwhlMVZV/view?usp=drivesdk">هنا</a>
+              </h4>
             </div>
             <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
+              <div class="circle orange"></div>
+              <h4 class="orangeH4">
+                <b>ملخـــــــص تاني للمنهـــج من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1KDdXnCMl3ZbNHGaB13ZAS9jGYfwie70C/view?usp=drive_link">هنا</a>
+              </h4>
             </div>
           </div>
         </div>
-        <div class="Cardd">
-          <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
-            <span class="arrow">▼</span>
-          </div>
-          <div class="Cardd-content">
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-          </div>
-        </div>
-        <div class="Cardd">
-          <div class="Cardd-headerOfCard" onclick="toggleCard(this)">
-            <h3 class="blueH4">Introduction To Compures</h3>
-            <span class="arrow">▼</span>
-          </div>
-          <div class="Cardd-content">
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-            <div class="item">
-              <div class="circle blue"></div>
-              <h4 class="blueH4">ملخص </h4>
-            </div>
-          </div>
-        </div>
-        <div class="Cardd" style="width: 200px; margin: 40px auto; padding: 5px 30px; background: #ffffff1d;">
+        <div class="Cardd whatsLink" style="
+              width: 200px;
+              margin: 40px auto;
+              padding: 20px 30px 10px;
+              background: #ffffff61;
+            ">
           <div class="item">
             <!-- <div class="circle"></div> -->
-            <h4 class="greenH4"><b>إضافة ملخص </b><a class="whatsLink" href="https://wa.me/+201029456680"
-                target="_blank" style="padding: 3px 10px;">+</a></h4>
+            <a href="https://wa.me/+201029456680" target="_blank" style="text-decoration: none; color: inherit">
+              <h4 class="greenH4"><b>إضافــــــة ملخص </b></h4>
+            </a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -1435,8 +1406,7 @@
     <div class="page-header">
       <div class="drag-area"></div>
       <div class="dropArea">
-
-        <h2> بنك الأسئلة</h2>
+        <h2>بنك الأسئلة</h2>
         <button class="close-btn" onclick="closeAllPages()">
           <div class="arrow circle blueSelect2"></div>
         </button>
@@ -1459,13 +1429,15 @@
       <div id="term1Que" class="contentQue">
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">Introduction to Computers</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلــــــــــــــة من </b><a class="bookLink"
+                  href="https://drive.google.com/drive/folders/1NNOSn97ygf1d-01Q7V9jr344H0rwVMps?usp=drive_link"
                   target="_blank">هنا</a>
               </h4>
             </div>
@@ -1473,13 +1445,29 @@
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">Introduction to IS</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue" style="background-color: #63778c; box-shadow: 0px 0px 0px 3px #63778c34;"></div>
+              <h4 class="orangeH4Que">
+                <b style="color: #63778c;">لسه والله يا غالي</b>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="CarddQue">
+          <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
+            <h3 class="blueH4Que">Probability and Statistic</h3>
+            <span class="arrowQue">▼</span>
+          </div>
+          <div class="CarddContentQue">
+            <div class="itemQue">
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلــــــــــــــة من </b><a class="bookLink"
+                  href="https://drive.google.com/drive/folders/1Ht0UmaERhyPqwGHNvB_Yq4s2hVPvgCN7?usp=drive_link"
                   target="_blank">هنا</a>
               </h4>
             </div>
@@ -1487,13 +1475,15 @@
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">English</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلــــــــــــــة من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1gW7L-MadqkF6d27Lq-GPkuRTYenQNsj9/view?usp=drive_link"
                   target="_blank">هنا</a>
               </h4>
             </div>
@@ -1501,37 +1491,45 @@
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">Culculas</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
-                  target="_blank">هنا</a>
+              <div class="circleQue orangeQue" style="background-color: #63778c; box-shadow: 0px 0px 0px 3px #63778c34;"></div>
+              <h4 class="orangeH4Que">
+                <b style="color: #63778c;">لسه والله يا غالي</b>
               </h4>
             </div>
           </div>
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">Electronics</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلــــــــــــــة من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1cA73gnyWI9TVi5C1rIWq0bU3sl3xTzUj/view?usp=drivesdk"
                   target="_blank">هنا</a>
               </h4>
             </div>
           </div>
         </div>
-        <div class="Cardd" style="width: 200px; margin: 40px auto; padding: 5px 30px; background: #ffffff1d;">
+        <div class="Cardd whatsLink" style="
+              width: 200px;
+              margin: 40px auto;
+              padding: 20px 30px 10px;
+              background: #ffffff61;
+            ">
           <div class="item">
             <!-- <div class="circle"></div> -->
-            <h4 class="greenH4"><b>إضافة ملخص </b><a class="whatsLink" href="https://wa.me/+201029456680"
-                target="_blank" style="padding: 3px 10px;">+</a></h4>
+            <a href="https://wa.me/+201029456680" target="_blank" style="text-decoration: none; color: inherit">
+              <h4 class="greenH4"><b>إضافــــــة ملخص </b></h4>
+            </a>
           </div>
         </div>
       </div>
@@ -1544,8 +1542,18 @@
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلـــــــــــــــــــــة مهمة من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/16_Vlln3Zr5K-gzKtryyIhbcJ9qJPCCSs/view?usp=drive_link"
+                  target="_blank">هنا</a>
+              </h4>
+            </div>
+            <div class="itemQue">
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلة sanfoundry من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/16_Vlln3Zr5K-gzKtryyIhbcJ9qJPCCSs/view?usp=drive_link"
                   target="_blank">هنا</a>
               </h4>
             </div>
@@ -1553,13 +1561,57 @@
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">Object Programming (OOP)</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
               <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <h4 class="redH4Que">
+                <b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg" target="_blank">هنا</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="CarddQue">
+          <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
+            <h3 class="blueH4Que">linear Algebra</h3>
+            <span class="arrowQue">▼</span>
+          </div>
+          <div class="CarddContentQue">
+            <div class="itemQue">
+              <div class="circleQue redQue"></div>
+              <h4 class="redH4Que">
+                <b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg" target="_blank">هنا</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="CarddQue">
+          <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
+            <h3 class="blueH4Que">System Analysis and Design</h3>
+            <span class="arrowQue">▼</span>
+          </div>
+          <div class="CarddContentQue">
+            <div class="itemQue">
+              <div class="circleQue redQue"></div>
+              <h4 class="redH4Que">
+                <b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg" target="_blank">هنا</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="CarddQue">
+          <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
+            <h3 class="blueH4Que">Discrete Structure</h3>
+            <span class="arrowQue">▼</span>
+          </div>
+          <div class="CarddContentQue">
+            <div class="itemQue">
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلة السنوات السابقة من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/16_Vlln3Zr5K-gzKtryyIhbcJ9qJPCCSs/view?usp=drive_link"
                   target="_blank">هنا</a>
               </h4>
             </div>
@@ -1567,23 +1619,31 @@
         </div>
         <div class="CarddQue">
           <div class="CarddHeaderQue" onclick="toggleCardQue(this)">
-            <h3 class="blueH4Que">Structure Programming</h3>
+            <h3 class="blueH4Que">English 2</h3>
             <span class="arrowQue">▼</span>
           </div>
           <div class="CarddContentQue">
             <div class="itemQue">
-              <div class="circleQue redQue"></div>
-              <h4 class="redH4Que"><b>فيديو يوتيوب من </b><a class="vidLink" href="https://youtu.be/07AC2Syf4Yg"
+              <div class="circleQue orangeQue"></div>
+              <h4 class="orangeH4Que">
+                <b>أسئلة الميد تيرم من </b><a class="bookLink"
+                  href="https://drive.google.com/file/d/1QH7TUH6cdJDk94QPYyPcX4kwEOC9uRuD/view?usp=drivesdk"
                   target="_blank">هنا</a>
               </h4>
             </div>
           </div>
         </div>
-        <div class="Cardd" style="width: 200px; margin: 40px auto; padding: 5px 30px; background: #ffffff1d;">
+        <div class="Cardd whatsLink" style="
+              width: 200px;
+              margin: 40px auto;
+              padding: 20px 30px 10px;
+              background: #ffffff61;
+            ">
           <div class="item">
             <!-- <div class="circle"></div> -->
-            <h4 class="greenH4"><b>إضافة ملخص </b><a class="whatsLink" href="https://wa.me/+201029456680"
-                target="_blank" style="padding: 3px 10px;">+</a></h4>
+            <a href="https://wa.me/+201029456680" target="_blank" style="text-decoration: none; color: inherit">
+              <h4 class="greenH4"><b>إضافــــــة ملخص </b></h4>
+            </a>
           </div>
         </div>
       </div>
@@ -1594,8 +1654,7 @@
     <div class="page-header">
       <div class="drag-area"></div>
       <div class="dropArea">
-
-        <h2>المصادر</h2>
+        <h2>المتجر</h2>
         <button class="close-btn" onclick="closeAllPages()">
           <div class="arrow circle blueSelect2"></div>
         </button>
@@ -1603,10 +1662,7 @@
       <div class="drag-area2"></div>
     </div>
     <div class="page-content">
-      <p>هحط هنا </p>
-      <h4 class="redH4">كورسات</h4>
-      <h4 class="orangeH4">كتب</h4>
-      <h4 class="blueH4">مواقع</h4>
+      <h4 class="blueH4" style="margin-top: 200px">لسه والله يا غالي !</h4>
     </div>
   </div>
 
@@ -1614,7 +1670,6 @@
     <div class="page-header">
       <div class="drag-area"></div>
       <div class="dropArea">
-
         <h2>احنا مين</h2>
         <button class="close-btn" onclick="closeAllPages()">
           <div class="arrow circle blueSelect2"></div>
@@ -1623,7 +1678,108 @@
       <div class="drag-area2"></div>
     </div>
     <div class="page-content">
-      <p> شوية رغي ..</p>
+      <div class="myInfo">
+        <div class="socialMedia">
+          <a href="https://www.instagram.com/mohamed27.k?igsh=M3B2cWhtajJrYnQw&utm_source=qr"
+            style="text-decoration: none; color: inherit">
+            <div class="imgSocial1"></div>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamed-mansour27/" style="text-decoration: none; color: inherit">
+            <div class="imgSocial3"></div>
+          </a>
+          <a href="https://github.com/mohamedmansour277" style="text-decoration: none; color: inherit">
+            <div class="imgSocial4"></div>
+          </a>
+          <a href="https://wa.me/+201029456680" style="text-decoration: none; color: inherit">
+            <div class="imgSocial5"></div>
+          </a>
+        </div>
+        <div class="myInfoContent">
+          <div class="infoText">
+            <div class="infoName">
+              <p>محمد منصور حسن</p>
+            </div>
+            <div class="linem"></div>
+            <div class="infoTitle">
+              <p style="margin-right: 0">front end</p>
+              <p>ui ux</p>
+            </div>
+          </div>
+          <div class="infoPic"></div>
+        </div>
+      </div>
+      <div class="thanksCard">
+        <div class="lineth1"></div>
+        <div class="lineth2">
+          <h2>شكـــــرا</h2>
+          <!-- <p>صناع المحتوى</p> -->
+        </div>
+        <div class="lineth3"></div>
+      </div>
+      <div class="thanksContent">
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0)">
+            محمد فايز سلامه
+          </p>
+          <span class="circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0)">
+            إسلام محسن سالم
+          </p>
+          <span class="circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0)">
+            انتصار مجدي العطار
+          </p>
+          <span class="circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>ملخصات</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0)">
+            جروب <b>Codology</b>
+          </p>
+          <span class="circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثالثة</p>
+            <p>داتا</p>
+          </div>
+        </div>
+        <div class="human">
+          <p style="background-color: rgba(255, 255, 255, 0)">
+            جروب <b>Chat-FCI</b>
+          </p>
+          <span class="circle blue"></span>
+          <div class="lineThan">
+            <p>الفرقة الثانية</p>
+            <p>داتا</p>
+          </div>
+        </div>
+        <div class="human humanGreen">
+          <a href="https://wa.me/+201029456680" style="text-decoration: none; color: inherit">
+            <p style="background-color: rgba(255, 255, 255, 0)">
+              + إضافة اسمك
+            </p>
+            <span class="circle green"></span>
+            <div class="lineThan">
+              <p>الفرقة ..</p>
+              <p>عملت ..</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
   <script>
@@ -1635,7 +1791,7 @@
       page2: { default: "imgs/que-be.svg", active: "imgs/que-af.svg" },
       page3: { default: "imgs/res-be.svg", active: "imgs/res-af.svg" },
       page4: { default: "imgs/about-be.svg", active: "imgs/about-af.svg" },
-      home: { default: "imgs/home-be.svg", active: "imgs/home-af.svg" }
+      home: { default: "imgs/home-be.svg", active: "imgs/home-af.svg" },
     };
 
     // أول ما يفتح الموقع: خلى الهوم active
@@ -1661,20 +1817,28 @@
       resetAll();
 
       // غيّر صورة الصفحة اللي اتفتحت + ضيف كلاس
-      const activeImg = document.querySelector(`[onclick="openPage('${id}')"] img`);
-      const activeBtn = document.querySelector(`[onclick="openPage('${id}')"]`).closest(".sim1");
+      const activeImg = document.querySelector(
+        `[onclick="openPage('${id}')"] img`
+      );
+      const activeBtn = document
+        .querySelector(`[onclick="openPage('${id}')"]`)
+        .closest(".sim1");
       if (activeImg) activeImg.src = icons[id].active;
       if (activeBtn) activeBtn.classList.add("activeSim");
 
       // رجّع الهوم للوضع العادي
-      const homeImg = document.querySelector(`[onclick="closeAllPages()"] img`);
-      const homeBtn = document.querySelector(`[onclick="closeAllPages()"]`).closest(".sim1");
+      const homeImg = document.querySelector(
+        `[onclick="closeAllPages()"] img`
+      );
+      const homeBtn = document
+        .querySelector(`[onclick="closeAllPages()"]`)
+        .closest(".sim1");
       if (homeImg) homeImg.src = icons.home.default;
       if (homeBtn) homeBtn.classList.remove("activeSim");
     }
 
     function closeAllPages() {
-      document.querySelectorAll(".page").forEach(page => {
+      document.querySelectorAll(".page").forEach((page) => {
         page.classList.remove("active");
         /////////////////////////////!
       });
@@ -1688,7 +1852,7 @@
     }
 
     function resetAll() {
-      Object.keys(icons).forEach(pid => {
+      Object.keys(icons).forEach((pid) => {
         let selector =
           pid === "home"
             ? `[onclick="closeAllPages()"]`
@@ -1703,24 +1867,30 @@
     }
 
     function setHomeActive() {
-      const homeImg = document.querySelector(`[onclick="closeAllPages()"] img`);
-      const homeBtn = document.querySelector(`[onclick="closeAllPages()"]`).closest(".sim1");
+      const homeImg = document.querySelector(
+        `[onclick="closeAllPages()"] img`
+      );
+      const homeBtn = document
+        .querySelector(`[onclick="closeAllPages()"]`)
+        .closest(".sim1");
       if (homeImg) homeImg.src = icons.home.active;
       if (homeBtn) homeBtn.classList.add("activeSim");
     }
 
-    // السحب لتحت يقفل الصفحة
-    document.querySelectorAll(".page-header").forEach(header => {
-      let startY, currentY, isDragging = false;
+    // السحب لتحت أو لأعلى يقفل الصفحة
+    document.querySelectorAll(".page-header").forEach((header) => {
+      let startY,
+        currentY,
+        isDragging = false;
       const page = header.parentElement;
 
-      header.addEventListener("touchstart", e => {
+      header.addEventListener("touchstart", (e) => {
         startY = e.touches[0].clientY;
         isDragging = true;
         page.style.transition = "none"; // تعطيل الانتقالات مؤقتًا
       });
 
-      header.addEventListener("touchmove", e => {
+      header.addEventListener("touchmove", (e) => {
         if (!isDragging) return;
         currentY = e.touches[0].clientY;
         let diff = currentY - startY;
@@ -1732,19 +1902,19 @@
       header.addEventListener("touchend", () => {
         isDragging = false;
         page.style.transition = "transform 0.4s ease";
-        if (currentY - startY > 100) {
+        if (currentY - startY > 10) {
           // إغلاق الصفحة بالسحب
           page.style.transform = "translateY(100%)";
           setTimeout(() => {
             page.classList.remove("active");
             page.style.transition = "";
-            page.style.transform = "";   // إعادة الوضع الطبيعي
+            page.style.transform = ""; // إعادة الوضع الطبيعي
             if (currentPage === page) currentPage = null;
             resetAll();
             setHomeActive();
           }, 400);
         } else {
-          page.style.transform = "translateY(0)";
+          page.style.transform = "translateY(10)";
         }
       });
     });
@@ -1760,7 +1930,7 @@
       setTimeout(() => {
         page.classList.remove("active");
         page.style.transition = ""; // إزالة أي transition موجود
-        page.style.transform = "";   // إعادة الصفحة للوضع الطبيعي
+        page.style.transform = ""; // إعادة الصفحة للوضع الطبيعي
         if (currentPage === page) currentPage = null;
         resetAll();
         setHomeActive();
@@ -1768,13 +1938,12 @@
     }
 
     // تعيين الحدث لكل زر ✖
-    document.querySelectorAll(".close-btn").forEach(btn => {
+    document.querySelectorAll(".close-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const page = e.target.closest(".page");
         closePageWithAnimation(page);
       });
     });
-
   </script>
   <script>
     function toggleCard(headerOfCard) {
@@ -1804,164 +1973,179 @@
       }
 
       // تغيير الكلاس بتاع homeContent
-      const homeDiv = document.querySelector('.homeContent, .homeConten1');
+      const homeDiv = document.querySelector(".homeContent, .homeConten1");
       if (homeDiv) {
-        homeDiv.classList.remove('homeContent');
-        homeDiv.classList.add('homeConten1');
+        homeDiv.classList.remove("homeContent");
+        homeDiv.classList.add("homeConten1");
       }
 
       // رجّع الكل للوضع العادي (default + remove class)
       resetAll();
 
       // غيّر صورة الصفحة اللي اتفتحت + ضيف كلاس
-      const activeImg = document.querySelector(`[onclick="openPage('${id}')"] img`);
-      const activeBtn = document.querySelector(`[onclick="openPage('${id}')"]`).closest(".sim1");
+      const activeImg = document.querySelector(
+        `[onclick="openPage('${id}')"] img`
+      );
+      const activeBtn = document
+        .querySelector(`[onclick="openPage('${id}')"]`)
+        .closest(".sim1");
       if (activeImg) activeImg.src = icons[id].active;
       if (activeBtn) activeBtn.classList.add("activeSim");
 
       // رجّع الهوم للوضع العادي
-      const homeImg = document.querySelector(`[onclick="closeAllPages()"] img`);
-      const homeBtn = document.querySelector(`[onclick="closeAllPages()"]`).closest(".sim1");
+      const homeImg = document.querySelector(
+        `[onclick="closeAllPages()"] img`
+      );
+      const homeBtn = document
+        .querySelector(`[onclick="closeAllPages()"]`)
+        .closest(".sim1");
       if (homeImg) homeImg.src = icons.home.default;
       if (homeBtn) homeBtn.classList.remove("activeSim");
     }
 
     function setHomeActive() {
-      const homeImg = document.querySelector(`[onclick="closeAllPages()"] img`);
-      const homeBtn = document.querySelector(`[onclick="closeAllPages()"]`).closest(".sim1");
+      const homeImg = document.querySelector(
+        `[onclick="closeAllPages()"] img`
+      );
+      const homeBtn = document
+        .querySelector(`[onclick="closeAllPages()"]`)
+        .closest(".sim1");
       if (homeImg) homeImg.src = icons.home.active;
       if (homeBtn) homeBtn.classList.add("activeSim");
 
       // ترجع الكلاس الأصلي للـ homeContent لما نرجع للهوم
-      const homeDiv = document.querySelector('.homeConten1, .homeContent');
+      const homeDiv = document.querySelector(".homeConten1, .homeContent");
       if (homeDiv) {
-        homeDiv.classList.remove('homeConten1');
-        homeDiv.classList.add('homeContent');
+        homeDiv.classList.remove("homeConten1");
+        homeDiv.classList.add("homeContent");
       }
     }
-
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const card = document.getElementById('termCard');
-      const header = document.getElementById('cardHeader');
-      const optionsBox = document.getElementById('optionsBox');
-      const options = optionsBox.querySelectorAll('.option');
-      const selectedSpan = document.getElementById('selectedTerm');
-      const contents = document.querySelectorAll('.content');
-      const STORAGE_KEY = 'selectedTerm';
+    document.addEventListener("DOMContentLoaded", () => {
+      const card = document.getElementById("termCard");
+      const header = document.getElementById("cardHeader");
+      const optionsBox = document.getElementById("optionsBox");
+      const options = optionsBox.querySelectorAll(".option");
+      const selectedSpan = document.getElementById("selectedTerm");
+      const contents = document.querySelectorAll(".content");
+      const STORAGE_KEY = "selectedTerm";
 
       // استرجاع القيمة المحفوظة
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) setTerm(saved, false);
 
       // فتح / غلق القائمة
-      header.addEventListener('click', () => {
-        const isOpen = card.classList.toggle('open');
-        optionsBox.style.maxHeight = isOpen ? optionsBox.scrollHeight + 'px' : null;
+      header.addEventListener("click", () => {
+        const isOpen = card.classList.toggle("open");
+        optionsBox.style.maxHeight = isOpen
+          ? optionsBox.scrollHeight + "px"
+          : null;
       });
 
       // اختيار ترم
-      options.forEach(opt => {
-        opt.addEventListener('click', () => {
+      options.forEach((opt) => {
+        opt.addEventListener("click", () => {
           const term = opt.dataset.term;
           setTerm(term, true);
-          card.classList.remove('open');
+          card.classList.remove("open");
           optionsBox.style.maxHeight = null;
         });
       });
 
       // إغلاق لو ضغط خارج الكارد
-      document.addEventListener('click', (e) => {
-        if (!card.contains(e.target) && card.classList.contains('open')) {
-          card.classList.remove('open');
+      document.addEventListener("click", (e) => {
+        if (!card.contains(e.target) && card.classList.contains("open")) {
+          card.classList.remove("open");
           optionsBox.style.maxHeight = null;
         }
       });
 
       function setTerm(term, save = true) {
-        selectedSpan.textContent = term === '1' ? 'الترم الأول' : 'الترم الثاني';
+        selectedSpan.textContent =
+          term === "1" ? "الترم الأول" : "الترم الثاني";
         if (save) localStorage.setItem(STORAGE_KEY, term);
-        contents.forEach(c => c.classList.remove('active'));
-        const target = document.getElementById('term' + term);
-        if (target) target.classList.add('active');
+        contents.forEach((c) => c.classList.remove("active"));
+        const target = document.getElementById("term" + term);
+        if (target) target.classList.add("active");
       }
     });
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const STORAGE_KEY = 'selectedFereqa';
-      const card = document.getElementById('fereqaCard');
-      const header = document.getElementById('cardHeaderrr');
-      const feqeraOption = document.getElementById('feqeraOption');
-      const options = feqeraOption.querySelectorAll('.fereqa-option');
+    document.addEventListener("DOMContentLoaded", () => {
+      const STORAGE_KEY = "selectedFereqa";
+      const card = document.getElementById("fereqaCard");
+      const header = document.getElementById("cardHeaderrr");
+      const feqeraOption = document.getElementById("feqeraOption");
+      const options = feqeraOption.querySelectorAll(".fereqa-option");
 
       // استرجاع آخر ترم مختار وفتح الرابط مباشرة
       const savedTerm = localStorage.getItem(STORAGE_KEY);
       if (savedTerm) {
-        const savedOption = Array.from(options).find(opt => opt.dataset.fereqa === savedTerm);
+        const savedOption = Array.from(options).find(
+          (opt) => opt.dataset.fereqa === savedTerm
+        );
         if (savedOption) {
           window.location.href = savedOption.href;
         }
       }
 
       // فتح/غلق القائمة
-      header.addEventListener('click', () => {
-        const isOpen = card.classList.toggle('open');
-        feqeraOption.style.maxHeight = isOpen ? feqeraOption.scrollHeight + 'px' : null;
+      header.addEventListener("click", () => {
+        const isOpen = card.classList.toggle("open");
+        feqeraOption.style.maxHeight = isOpen
+          ? feqeraOption.scrollHeight + "px"
+          : null;
       });
 
       // حفظ الاختيار عند الضغط على الرابط
-      options.forEach(opt => {
-        opt.addEventListener('click', () => {
+      options.forEach((opt) => {
+        opt.addEventListener("click", () => {
           localStorage.setItem(STORAGE_KEY, opt.dataset.fereqa);
         });
       });
 
       // إغلاق القائمة عند الضغط خارجها
-      document.addEventListener('click', e => {
-        if (!card.contains(e.target) && card.classList.contains('open')) {
-          card.classList.remove('open');
+      document.addEventListener("click", (e) => {
+        if (!card.contains(e.target) && card.classList.contains("open")) {
+          card.classList.remove("open");
           feqeraOption.style.maxHeight = null;
         }
       });
     });
   </script>
   <script>
-    const clossseBtn = document.getElementById('clossseBtn');
-    const messageCard = document.getElementById('messageCard');
-    const opennnBtn = document.getElementById('opennnBtn');
-    const notificContent = document.getElementById('notificContent');
+    const clossseBtn = document.getElementById("clossseBtn");
+    const messageCard = document.getElementById("messageCard");
+    const opennnBtn = document.getElementById("opennnBtn");
+    const notificContent = document.getElementById("notificContent");
 
-    // فتح الكارد
-    opennnBtn.addEventListener('click', () => {
-      messageCard.style.display = 'flex';
+    opennnBtn.addEventListener("click", () => {
+      messageCard.style.display = "flex";
       setTimeout(() => {
-        messageCard.classList.add('show');
+        messageCard.classList.add("show");
       }, 10);
     });
 
     // غلق الكارد عند الضغط على X
-    clossseBtn.addEventListener('click', () => {
+    clossseBtn.addEventListener("click", () => {
       closeCard();
     });
 
-    // غلق الكارد عند الضغط على أي مكان خارج الكارد
-    messageCard.addEventListener('click', (e) => {
-      if (!notificContent.contains(e.target)) { // لو الضغط مش جوا الكارد
+    messageCard.addEventListener("click", (e) => {
+      if (!notificContent.contains(e.target)) {
         closeCard();
       }
     });
 
     function closeCard() {
-      messageCard.classList.remove('show');
+      messageCard.classList.remove("show");
       setTimeout(() => {
-        messageCard.style.display = 'none';
-      }, 500); // نفس زمن الـ transition
+        messageCard.style.display = "none";
+      }, 500);
     }
   </script>
   <script>
-    // فتح وقفل كارد المحتوى
     function toggleCardQue(headerQue) {
       const cardQue = headerQue.parentElement;
       const contentQue = cardQue.querySelector(".CarddContentQue");
@@ -1975,49 +2159,63 @@
       }
     }
 
-    // اختيار الترم وحفظه
-    document.addEventListener('DOMContentLoaded', () => {
-      const cardQue = document.getElementById('termCardQue');
-      const headerQue = document.getElementById('cardHeaderQue');
-      const optionsBoxQue = document.getElementById('optionsBoxQue');
-      const optionsQue = optionsBoxQue.querySelectorAll('.optionQue');
-      const selectedTermQue = document.getElementById('selectedTermQue');
-      const contentsQue = document.querySelectorAll('.contentQue');
-      const STORAGE_KEY_QUE = 'selectedTermQue';
+    document.addEventListener("DOMContentLoaded", () => {
+      const cardQue = document.getElementById("termCardQue");
+      const headerQue = document.getElementById("cardHeaderQue");
+      const optionsBoxQue = document.getElementById("optionsBoxQue");
+      const optionsQue = optionsBoxQue.querySelectorAll(".optionQue");
+      const selectedTermQue = document.getElementById("selectedTermQue");
+      const contentsQue = document.querySelectorAll(".contentQue");
+      const STORAGE_KEY_QUE = "selectedTermQue";
 
-      // تحميل الاختيار المحفوظ
       const savedQue = localStorage.getItem(STORAGE_KEY_QUE);
       if (savedQue) setTermQue(savedQue, false);
 
-      headerQue.addEventListener('click', () => {
-        const isOpen = cardQue.classList.toggle('openQue');
-        optionsBoxQue.style.maxHeight = isOpen ? optionsBoxQue.scrollHeight + 'px' : null;
+      headerQue.addEventListener("click", () => {
+        const isOpen = cardQue.classList.toggle("openQue");
+        optionsBoxQue.style.maxHeight = isOpen
+          ? optionsBoxQue.scrollHeight + "px"
+          : null;
       });
 
-      optionsQue.forEach(optQue => {
-        optQue.addEventListener('click', () => {
+      optionsQue.forEach((optQue) => {
+        optQue.addEventListener("click", () => {
           const termQue = optQue.dataset.term;
           setTermQue(termQue, true);
-          cardQue.classList.remove('openQue');
+          cardQue.classList.remove("openQue");
           optionsBoxQue.style.maxHeight = null;
         });
       });
 
-      document.addEventListener('click', (e) => {
-        if (!cardQue.contains(e.target) && cardQue.classList.contains('openQue')) {
-          cardQue.classList.remove('openQue');
+      document.addEventListener("click", (e) => {
+        if (
+          !cardQue.contains(e.target) &&
+          cardQue.classList.contains("openQue")
+        ) {
+          cardQue.classList.remove("openQue");
           optionsBoxQue.style.maxHeight = null;
         }
       });
 
       function setTermQue(termQue, save = true) {
-        selectedTermQue.textContent = termQue === '1' ? 'الترم الأول' : 'الترم الثاني';
+        selectedTermQue.textContent =
+          termQue === "1" ? "الترم الأول" : "الترم الثاني";
         if (save) localStorage.setItem(STORAGE_KEY_QUE, termQue);
-        contentsQue.forEach(c => c.classList.remove('activeQue'));
-        const targetQue = document.getElementById('term' + termQue + 'Que');
-        if (targetQue) targetQue.classList.add('activeQue');
+        contentsQue.forEach((c) => c.classList.remove("activeQue"));
+        const targetQue = document.getElementById("term" + termQue + "Que");
+        if (targetQue) targetQue.classList.add("activeQue");
       }
     });
+    let mShare = document.querySelector(".mShare");
+    mShare.onclick = () => {
+      if (navigator.share) {
+        navigator.share({
+          title: "FCI",
+          text: "داه لينك موقع حاسبات ومعلومات العريش يا صاحبي \n",
+          url: window.location.href,
+        });
+      }
+    };
   </script>
 </body>
 
