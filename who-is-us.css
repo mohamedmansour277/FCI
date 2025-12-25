@@ -1010,7 +1010,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 8px;
+  bottom: 7px;
   width: 80%;
   /* height: 20px; */
   max-width: 600px;
@@ -1027,8 +1027,8 @@
   scale: 1.2;
 }
 .imgSocial1 {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #ffffff;
   background: url(imgs/instagram.svg);
   /* background-position: ; */
@@ -1036,32 +1036,32 @@
 }
 .imgSocial2 {
   display: none;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #ffffff;
   background: url(imgs/facebook.svg);
   /* background-position: ; */
   background-size: contain;
 }
 .imgSocial3 {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #ffffff;
   background: url(imgs/linkedin.svg);
   /* background-position: ; */
   background-size: contain;
 }
 .imgSocial4 {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #ffffff;
   background: url(imgs/github2.svg);
   /* background-position: ; */
   background-size: contain;
 }
 .imgSocial5 {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #ffffff;
   background: url(imgs/whatsapp.svg);
   /* background-position: ; */
@@ -1082,7 +1082,20 @@
   transform: rotate(-7deg);
   width: 100px;
   height: 100px;
-  background: url(imgs/user4.jpg);
+  background: url(imgs/user1.jpg);
+  background-position: center;
+  background-size: 100px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 1px 1px 0px 0.2px #25bfed;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background-size 1s ease,
+    border-radius 0.5s ease, box-shadow 1.2s ease,margin-left .2s ease, border 1.3s ease,scale 1.3s ease;
+}
+.infoPic2 {
+  transform: rotate(7deg);
+  width: 100px;
+  height: 100px;
+  background: url(imgs/user2.jpg);
   background-position: center;
   background-size: 100px;
   border: 2px solid rgb(255, 255, 255);
@@ -1097,6 +1110,16 @@
   border-radius: 20px;
   scale: 1.1;
   margin-left: 6px;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 0px 2px #25beed00;
+  /* box-shadow: 0px 0px 0px 2px #25bfed; */
+}
+.myInfoContent:hover .infoPic2{
+  transform: rotate(0deg);
+  background-size: 150px;
+  border-radius: 20px;
+  scale: 1.1;
+  margin-right: 6px;
   border: 2px solid #ffffff;
   box-shadow: 2px 2px 0px 2px #25beed00;
   /* box-shadow: 0px 0px 0px 2px #25bfed; */
